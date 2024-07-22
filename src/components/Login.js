@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -13,6 +15,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       setError(null);
       alert('User logged in successfully!');
+      navigate('/profile'); // Redirect to profile page or any other route you prefer
     } catch (error) {
       setError(error.message);
     }
