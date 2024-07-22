@@ -104,11 +104,12 @@ const Quotes = () => {
   const quoteOfTheDay = quotes[dayOfYear % quotes.length];
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold">Inspirational Quote of the Day</h1>
-      <p className="mt-4">{quoteOfTheDay}</p>
+    <div className="container mx-auto p-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg">
+      <h1 className="text-4xl font-bold mb-4 text-center">Inspirational Quote of the Day</h1>
+      <p className="mt-4 text-2xl text-center">{quoteOfTheDay}</p>
     </div>
   );
 };
 
 export default Quotes;
+
